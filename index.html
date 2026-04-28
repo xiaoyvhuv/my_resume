@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>林逸凡 | 个人简历</title>
+    <title>邢思宇 | 个人简历</title>
     <meta
       name="description"
-      content="林逸凡的个人简历网站，展示教育背景、项目经历、专业技能与联系方式。"
+      content="邢思宇的个人简历网站，展示教育背景、项目经历、专业技能与联系方式。"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -14,11 +14,12 @@
     <header class="site-header" id="top">
       <nav class="nav" aria-label="主导航">
         <div class="nav__inner">
-          <a class="nav__brand" href="#about" data-nav-link>林逸凡</a>
+          <a class="nav__brand" href="#about" data-nav-link>邢思宇</a>
           <div class="nav__links" aria-label="桌面端导航">
             <a href="#about" data-nav-link>关于</a>
             <a href="#education" data-nav-link>教育</a>
             <a href="#projects" data-nav-link>项目</a>
+            <a href="#opensource" data-nav-link>开源</a>
             <a href="#skills" data-nav-link>技能</a>
             <a href="./blog/index.html">博客</a>
             <a href="#contact" data-nav-link>联系</a>
@@ -59,6 +60,7 @@
             <a href="#about" data-mobile-link>关于</a>
             <a href="#education" data-mobile-link>教育</a>
             <a href="#projects" data-mobile-link>项目</a>
+            <a href="#opensource" data-mobile-link>开源</a>
             <a href="#skills" data-mobile-link>技能</a>
             <a href="./blog/index.html">博客</a>
             <a href="#contact" data-mobile-link>联系</a>
@@ -74,24 +76,24 @@
         </div>
         <div class="container">
           <div class="hero__content">
-            <p class="hero__eyebrow">Yifan Lin</p>
+            <p class="hero__eyebrow">Xing Siyu</p>
             <h1 class="hero__title" id="hero-title">
-              你好，我是林逸凡
+              你好，我是邢思宇
               <span
                 class="hero__typing"
-                data-typing='["前端开发工程师","像素级体验的构建者","热爱开源与美感的开发者"]'
-                aria-label="前端开发工程师"
+                data-typing='["Agent/AI应用开发工程师","全栈开发工程师","热爱开源的开发者"]'
+                aria-label="Agent/AI应用开发工程师"
               >
-                <span class="hero__typing-text">前端开发工程师</span>
+                <span class="hero__typing-text">Agent/AI应用开发工程师</span>
                 <span class="hero__typing-caret" aria-hidden="true"></span>
               </span>
             </h1>
             <p class="hero__subtitle">
               <span class="hero__subtitle-accent"></span>
-              2026 届应届毕业生 / 前端开发工程师
+              2029届毕业生 / Agent/AI应用开发工程师
             </p>
             <p class="hero__description">
-              热衷于构建简洁、实用且富有美感的数字产品。目前就读于江南大学计算机科学与技术专业，正积极寻找前端开发或全栈方向的校招机会。
+              热衷于构建更加智能的Agent/AI应用。目前就读于西北农林科技大学/控制工程专业，正积极寻找Agent/AI应用开发工程师实习机会。
             </p>
             <div class="hero__actions">
               <a class="button button--outline" href="#projects" data-nav-link>查看我的作品</a>
@@ -112,18 +114,18 @@
               <div class="timeline__marker" aria-hidden="true"></div>
               <div class="timeline__content">
                 <p class="timeline__meta">2022.09 - 2026.06</p>
-                <h3 class="timeline__title">江南大学 计算机科学与技术 本科</h3>
+                <h3 class="timeline__title">河北农业大学 计算机科学与技术 本科</h3>
                 <p class="timeline__text">
-                  工学学士，本科在读。GPA 3.8/4.0，国家励志奖学金，校级优秀学生干部。
+                  工学学士，本科在读。专业前15%，多项校级奖学金，省级编程竞赛奖项。
                 </p>
               </div>
             </article>
             <article class="timeline__item">
               <div class="timeline__marker" aria-hidden="true"></div>
               <div class="timeline__content">
-                <p class="timeline__meta">2019.09 - 2022.06</p>
-                <h3 class="timeline__title">江城第一高级中学 理科班</h3>
-                <p class="timeline__text">高考分数 652 分，省排名前 3%。</p>
+                <p class="timeline__meta">2026.09 - 2029.06</p>
+                <h3 class="timeline__title">西北农林科技大学 控制工程 硕士</h3>
+                <p class="timeline__text">工学硕士，目前研0。</p>
               </div>
             </article>
           </div>
@@ -145,22 +147,22 @@
                 <span class="project-card__orbit"></span>
               </div>
               <div class="project-card__header">
-                <h3 class="project-card__title">智慧校园助手</h3>
-                <p class="project-card__date">2025.03 - 2025.06</p>
+                <h3 class="project-card__title">Yuto: Harness（Agent 测试框架）</h3>
+                <p class="project-card__date">2026.01 - 2026.03</p>
               </div>
               <p class="project-card__description">
-                基于微信小程序与 Node.js 后台的全栈应用，实现课表查询、成绩推送、失物招领与校园地图功能。独立完成前端架构与组件开发，累计服务校内 800+ 用户。
+                设计并实现面向 Agent 工作流的 harness 系统，围绕 Tool Calling、Context Management、Layered Memory 与 Checkpoint/Resume 构建可复现评测流程。通过多轮 prompt 优化与追踪，将关键任务成功率从 16.19% 提升到 33.28%。
               </p>
-              <div class="tag-list" aria-label="智慧校园助手技术栈">
-                <span class="tag">微信小程序</span>
-                <span class="tag">Vue 3</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">WebSocket</span>
+              <div class="tag-list" aria-label="Yuto Harness 技术栈">
+                <span class="tag">Python</span>
+                <span class="tag">Agent Harness</span>
+                <span class="tag">Tool Calling</span>
+                <span class="tag">Checkpoint / Resume</span>
+                <span class="tag">Run Trace</span>
               </div>
               <div class="project-card__footer">
-                <span class="project-card__metric">800+ 校内用户</span>
-                <span class="project-card__metric">全栈独立完成</span>
+                <span class="project-card__metric">12 轮 Prompt 优化</span>
+                <span class="project-card__metric">10+ Workspace 稳定恢复</span>
               </div>
             </article>
 
@@ -172,25 +174,45 @@
                 <span class="project-card__orbit"></span>
               </div>
               <div class="project-card__header">
-                <h3 class="project-card__title">个人博客与知识库</h3>
-                <p class="project-card__date">2024.11 - 2025.01</p>
+                <h3 class="project-card__title">DeepSee: Agentic Workflow 平台</h3>
+                <p class="project-card__date">2026.04 - 2026.05</p>
               </div>
               <p class="project-card__description">
-                使用 Next.js 与 MDX 构建的静态博客系统，支持标签分类、全文检索与暗黑模式。设计极简阅读界面，已部署于 Vercel 并持续更新技术笔记。
+                搭建基于 RAG + State Machine 的 Agentic 工作流，采用 Graph-based LCEL 组织 Router、Planner、Researcher、Writer、Reviewer 与 Refiner 角色协作；并接入 Intent Router 与 Grader 机制提升检索与生成质量。
               </p>
-              <div class="tag-list" aria-label="个人博客与知识库技术栈">
-                <span class="tag">React</span>
-                <span class="tag">Next.js</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">MDX</span>
-                <span class="tag">Tailwind CSS</span>
+              <div class="tag-list" aria-label="DeepSee 技术栈">
+                <span class="tag">FastAPI</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">LangGraph</span>
+                <span class="tag">ChromaDB</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Tavily Search API</span>
               </div>
               <div class="project-card__footer">
-                <span class="project-card__metric">持续更新技术笔记</span>
-                <span class="project-card__metric">静态部署优化</span>
+                <span class="project-card__metric">多 Agent 协同编排</span>
+                <span class="project-card__metric">异步状态持久化</span>
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section section-divider section-hidden" id="opensource" data-animate aria-labelledby="opensource-title">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__bar" aria-hidden="true"></span>
+            <h2 class="section-heading__title" id="opensource-title">开源经历</h2>
+          </div>
+          <article class="project-card">
+            <div class="project-card__header">
+              <h3 class="project-card__title">开源之夏 OSPP 2025（中科院软件所）</h3>
+              <p class="project-card__date">2025.07 - 2025.09</p>
+            </div>
+            <p class="project-card__description">
+              参与由中科院软件所主办的开源之夏（OSPP2025），在 MaxKey相关课题中负责开源项目重构，重点优化模块边界、调用流程与可维护性；同时重新撰写技术文档与用户手册，完善从安装、配置到二次开发的完整使用链路。
+            </p>
+            <a href="https://gitee.com/dromara/MaxKey/pulls/56" target="_blank" rel="noopener noreferrer">贡献代码</a>
+          </article>
         </div>
       </section>
 
@@ -210,7 +232,22 @@
                 <span class="skill-pill">● TypeScript</span>
                 <span class="skill-pill">● React</span>
                 <span class="skill-pill">● Vue 3</span>
-                <span class="skill-pill">● Tailwind CSS</span>
+                <span class="skill-pill">● MCP Protocol</span>
+              </div>
+            </article>
+
+            <article class="skill-group">
+              <p class="skill-group__label">LLM / Agent</p>
+              <div class="skill-list">
+                <span class="skill-pill">● LangChain / LangGraph</span>
+                <span class="skill-pill">● OpenAI API</span>
+                <span class="skill-pill">● Prompt Engineering</span>
+                <span class="skill-pill">● Agent Tool Calling</span>
+                <span class="skill-pill">● Agent Workflow</span>
+                <span class="skill-pill">● RAG</span>
+                <span class="skill-pill">● Chunking / Metadata / Embedding</span>
+                <span class="skill-pill">● BM25 / Rerank</span>
+                <span class="skill-pill">● Ragas / Golden Test Set</span>
               </div>
             </article>
 
@@ -220,16 +257,20 @@
                 <span class="skill-pill">● Node.js</span>
                 <span class="skill-pill">● Express</span>
                 <span class="skill-pill">● Python</span>
+                <span class="skill-pill">● C</span>
+                <span class="skill-pill">● MySQL / PostgreSQL / PGVector</span>
+                <span class="skill-pill">● Redis / ChromaDB</span>
                 <span class="skill-pill">● Git</span>
                 <span class="skill-pill">● Docker</span>
-                <span class="skill-pill">● Figma</span>
+                <span class="skill-pill">● Linux</span>
               </div>
             </article>
 
             <article class="skill-group">
               <p class="skill-group__label">语言与协作</p>
               <div class="skill-list">
-                <span class="skill-pill">● 英语 CET-6（阅读文献流畅）</span>
+                <span class="skill-pill">● 技术文档与用户手册撰写</span>
+                <span class="skill-pill">● 开源协作与代码重构</span>
                 <span class="skill-pill">● 团队协作与敏捷开发</span>
               </div>
             </article>
@@ -277,10 +318,10 @@
           <div class="social-grid">
             <a
               class="social-card"
-              href="https://github.com/lyifan"
+              href="https://github.com/xiaoyvhuv"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="打开 GitHub：lyifan"
+              aria-label="打开 GitHub：xiaoyvhuv"
             >
               <span class="social-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -294,15 +335,15 @@
                 </svg>
               </span>
               <span class="social-card__name">GitHub</span>
-              <span class="social-card__meta">lyifan</span>
+              <span class="social-card__meta">xiaoyvhuv</span>
             </a>
 
             <a
               class="social-card"
-              href="https://linkedin.com/in/lyifan"
+              href="https://linkedin.com/in/xiaoyvhuv"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="打开 LinkedIn：Yifan Lin"
+              aria-label="打开 LinkedIn：xingsiyu"
             >
               <span class="social-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -313,13 +354,13 @@
                 </svg>
               </span>
               <span class="social-card__name">LinkedIn</span>
-              <span class="social-card__meta">Yifan Lin</span>
+              <span class="social-card__meta">邢思宇</span>
             </a>
 
             <a
               class="social-card"
-              href="mailto:lyifan@example.com"
-              aria-label="发送邮件至 lyifan@example.com"
+              href="mailto:xiaoyvhuv@sina.com"
+              aria-label="发送邮件至 xiaoyvhuv@sina.com"
             >
               <span class="social-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -333,36 +374,34 @@
                 </svg>
               </span>
               <span class="social-card__name">电子邮箱</span>
-              <span class="social-card__meta">lyifan@example.com</span>
+              <span class="social-card__meta">xiaoyvhuv@sina.com</span>
             </a>
 
             <a
               class="social-card"
-              href="https://lyifan.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="打开个人博客：lyifan.dev"
+              href="tel:15128169271"
+              aria-label="拨打电话 15128169271"
             >
               <span class="social-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <path
-                    d="M12 3.8a8.2 8.2 0 1 0 0 16.4a8.2 8.2 0 0 0 0-16.4Zm0 0c2 2 3.1 5.2 3.1 8.2S14 18.2 12 20.2m0-16.4c-2 2-3.1 5.2-3.1 8.2s1.1 6.2 3.1 8.2M4.3 12h15.4"
+                    d="M7.1 4.8h2.3c.4 0 .8.3.9.7l.7 3.2c.1.4 0 .8-.3 1.1l-1.3 1.3a13.3 13.3 0 0 0 3.5 3.5l1.3-1.3c.3-.3.7-.4 1.1-.3l3.2.7c.4.1.7.5.7.9v2.3c0 .5-.4 1-.9 1A12.8 12.8 0 0 1 5.9 5.7c0-.5.5-.9 1-.9Z"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="1.6"
                   />
                 </svg>
               </span>
-              <span class="social-card__name">个人博客</span>
-              <span class="social-card__meta">lyifan.dev</span>
+              <span class="social-card__name">电话</span>
+              <span class="social-card__meta">15128169271</span>
             </a>
 
             <a
               class="social-card"
-              href="https://juejin.cn/user/lyifan"
+              href="https://github.com/xiaoyvhuv/my_resume"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="打开掘金主页"
+              aria-label="打开作品集仓库"
             >
               <span class="social-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -372,8 +411,8 @@
                   />
                 </svg>
               </span>
-              <span class="social-card__name">掘金</span>
-              <span class="social-card__meta">掘金主页</span>
+              <span class="social-card__name">作品集仓库</span>
+              <span class="social-card__meta">my_resume</span>
             </a>
           </div>
         </div>
@@ -382,7 +421,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="footer__text">期待与您交流合作 © 2026 林逸凡</p>
+        <p class="footer__text">期待与您交流合作 © 2026 邢思宇</p>
       </div>
     </footer>
 
