@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>从 Prompt 到 Workflow | 林逸凡</title>
+    <meta
+      name="description"
+      content="从 Prompt 到 Workflow：我如何搭建一个可复用的 LLM 前端实验台。"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav nav-scrolled" aria-label="主导航">
+        <div class="nav__inner">
+          <a class="nav__brand" href="../../index.html">林逸凡</a>
+          <div class="nav__links">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="打开菜单"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+          <button class="mobile-menu__close" type="button" aria-label="关闭菜单">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+          <div class="mobile-menu__links" aria-label="移动端导航">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container article-layout">
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="blog-category">LLM 相关</span>
+            <span>2026.03.18</span>
+            <span>8 min read</span>
+          </div>
+          <h1 class="article-title">从 Prompt 到 Workflow：我如何搭建一个可复用的 LLM 前端实验台</h1>
+          <p class="article-summary">
+            对我来说，真正好用的 LLM 工具不是“能问答”就够了，而是应该具备可复现、可比较、可沉淀的实验结构。这个实验台就是基于这个目标逐步长出来的。
+          </p>
+          <div class="article-tags">
+            <span class="tag">Prompt</span>
+            <span class="tag">Workflow</span>
+            <span class="tag">Experiment</span>
+          </div>
+        </article>
+
+        <section class="article-content">
+          <h2>为什么我不满足于一个聊天框</h2>
+          <p>
+            最早我也只是把模型接进一个最普通的对话框里，但很快就发现这种方式几乎无法支撑严肃的探索。一旦我开始尝试不同 prompt、不同 system instruction、不同上下文拼接策略，就很难回头比较哪一种方案真正有效。
+          </p>
+          <p>
+            于是我把目标改成了“实验台”而不是“聊天框”。前者强调的是过程记录，后者强调的是一次性结果。这个转变对界面结构影响很大。
+          </p>
+
+          <h2>我如何拆分这套前端结构</h2>
+          <p>整个界面被我拆成四个核心区域：</p>
+          <ul>
+            <li>输入区：负责 prompt、system instruction 与变量模板。</li>
+            <li>上下文区：显示检索片段、历史摘要与用户偏好。</li>
+            <li>结果区：不仅展示答案，也展示中间状态与 token 信息。</li>
+            <li>对比区：允许我把不同版本的 prompt 放在一起做横向比较。</li>
+          </ul>
+          <p>
+            这种布局带来的好处是，所有影响模型输出的因素都被显式化了。对前端来说，这意味着状态管理更复杂，但认知负担反而更低。
+          </p>
+
+          <h2>Prompt 不该只是字符串</h2>
+          <p>
+            当我把 prompt 当成配置对象，而不是单纯文本后，整个系统的可维护性有了明显提升。一个 prompt 模板里会包含角色设定、输入槽位、可选上下文、输出格式约束与版本号。
+          </p>
+          <p>
+            这样做的价值在于：当模型效果变化时，我可以明确知道到底是模板变了、上下文变了，还是输出解析方式变了。对于长期积累来说，这种边界感非常重要。
+          </p>
+
+          <h2>一个更接近产品的工作流视角</h2>
+          <p>
+            当系统开始支持“先总结上下文，再生成答案，最后做格式清洗”这类链式流程后，我意识到真正的重点已经不是单个 prompt，而是 workflow。用户面对的其实不是一次调用，而是一组有顺序的能力。
+          </p>
+          <p>
+            因此我在前端里加入了流程节点视图，让每一步的输入、输出和耗时都可见。哪怕用户不关心底层细节，这种透明度也会显著提升信任感。
+          </p>
+        </section>
+
+        <nav class="article-nav" aria-label="文章导航">
+          <a class="button button--outline" href="../index.html">返回博客列表</a>
+          <a class="button button--outline" href="./llm-memory-layering.html">下一篇：LLM 记忆分层</a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">期待与您交流合作 © 2026 林逸凡</p>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>

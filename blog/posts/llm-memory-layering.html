@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM 记忆分层策略 | 林逸凡</title>
+    <meta
+      name="description"
+      content="让上下文更轻：面向前端产品的 LLM 记忆分层策略。"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav nav-scrolled" aria-label="主导航">
+        <div class="nav__inner">
+          <a class="nav__brand" href="../../index.html">林逸凡</a>
+          <div class="nav__links">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="打开菜单"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+          <button class="mobile-menu__close" type="button" aria-label="关闭菜单">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+          <div class="mobile-menu__links" aria-label="移动端导航">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container article-layout">
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="blog-category">LLM 相关</span>
+            <span>2026.02.11</span>
+            <span>6 min read</span>
+          </div>
+          <h1 class="article-title">让上下文更“轻”：面向前端产品的 LLM 记忆分层策略</h1>
+          <p class="article-summary">
+            并不是把所有历史对话都塞给模型，体验就会更好。对产品来说，更重要的是知道哪些信息应该保留、哪些应该压缩、哪些应该被遗忘。
+          </p>
+          <div class="article-tags">
+            <span class="tag">Memory</span>
+            <span class="tag">Context</span>
+            <span class="tag">UX</span>
+          </div>
+        </article>
+
+        <section class="article-content">
+          <h2>短期记忆不等于完整聊天记录</h2>
+          <p>
+            许多 LLM 应用默认把整段聊天记录原样提交给模型，但这会很快带来上下文冗余。对前端产品来说，真正需要保留的是当前任务中仍然“活跃”的信息，而不是所有历史痕迹。
+          </p>
+          <p>
+            所以我更倾向于把短期记忆理解为“当前会话工作区”。它可以包含最近几轮对话、当前任务目标以及用户最新提供的数据，而不是毫无筛选的长上下文。
+          </p>
+
+          <h2>长期记忆适合保存偏好，而不是临时任务</h2>
+          <p>
+            我在设计记忆层时，会把用户长期偏好单独抽出来，例如语言风格、输出格式偏好、常见主题兴趣等。这类信息更新频率低，但对体验提升非常稳定。
+          </p>
+          <p>
+            相反，像“今天帮我整理面试问题”这样的任务性信息，不应该进入长期层，否则模型很容易在未来不合时宜地召回旧目标。
+          </p>
+
+          <h2>摘要层是连接两者的桥梁</h2>
+          <p>
+            当短期会话变长时，我通常不会简单截断，而是先生成结构化摘要。摘要不是为了节省字符那么简单，它更像是把会话压缩成模型真正可用的“任务状态”。
+          </p>
+          <ul>
+            <li>当前用户目标是什么。</li>
+            <li>已经确认的约束有哪些。</li>
+            <li>还未解决的问题是什么。</li>
+          </ul>
+          <p>
+            这样一来，系统就能把对话从“历史文本”转成“任务快照”，这对前端交互设计也更友好，因为它天然适合可视化展示。
+          </p>
+        </section>
+
+        <nav class="article-nav" aria-label="文章导航">
+          <a class="button button--outline" href="../index.html">返回博客列表</a>
+          <a class="button button--outline" href="./llm-prompt-workflow.html">上一篇：Prompt Workflow</a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">期待与您交流合作 © 2026 林逸凡</p>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多 Agent 进度与边界设计 | 林逸凡</title>
+    <meta
+      name="description"
+      content="把任务拆给多个 Agent 之后，前端界面应该如何呈现进度与边界。"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav nav-scrolled" aria-label="主导航">
+        <div class="nav__inner">
+          <a class="nav__brand" href="../../index.html">林逸凡</a>
+          <div class="nav__links">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="打开菜单"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+          <button class="mobile-menu__close" type="button" aria-label="关闭菜单">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+          <div class="mobile-menu__links" aria-label="移动端导航">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container article-layout">
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="blog-category">Agent 相关</span>
+            <span>2026.01.26</span>
+            <span>7 min read</span>
+          </div>
+          <h1 class="article-title">把任务拆给多个 Agent 之后，前端界面应该如何呈现进度与边界</h1>
+          <p class="article-summary">
+            多 Agent 并行会显著提升复杂任务的执行效率，但也会把原本简单的“过程反馈”问题变得更难。界面如果没有设计好，用户很容易陷入信息过载。
+          </p>
+          <div class="article-tags">
+            <span class="tag">Multi-Agent</span>
+            <span class="tag">Progress</span>
+            <span class="tag">Frontend</span>
+          </div>
+        </article>
+
+        <section class="article-content">
+          <h2>第一层：任务树，而不是聊天流</h2>
+          <p>
+            当系统只有一个 Agent 时，对话流还能勉强承担任务进展展示的职责；但一旦进入多 Agent 场景，单一消息流会很快失控。不同子任务的启动、等待、完成与失败会交织在一起，用户几乎无法建立清晰心智模型。
+          </p>
+          <p>
+            所以我更偏向于用任务树作为一层主视图，把总任务、子任务、依赖关系和当前状态放到一个可折叠的结构里。
+          </p>
+
+          <h2>第二层：把日志留给需要的人</h2>
+          <p>
+            并不是所有用户都想看到工具调用细节，所以日志不应该直接占据主界面。我通常会把它放在二级面板或抽屉里，让重度用户按需展开。
+          </p>
+          <p>
+            主界面只保留对大多数用户最关键的信息：任务是否卡住、是否需要确认、是否已经产出可查看结果。
+          </p>
+
+          <h2>第三层：失败要能局部重试</h2>
+          <p>
+            如果一个子 Agent 执行失败，最糟糕的体验就是整个流程全部重来。好的界面应该告诉用户具体是哪一个节点失败、失败原因是什么，以及是否支持局部重试或替代方案。
+          </p>
+          <ul>
+            <li>失败节点高亮，而不是整页报错。</li>
+            <li>允许只重试当前步骤。</li>
+            <li>必要时提供“改为人工继续”的接管入口。</li>
+          </ul>
+          <p>
+            多 Agent 的前端设计，本质上是在解决复杂系统的可解释性问题。只要信息分层做得足够清楚，复杂并不会天然导致混乱。
+          </p>
+        </section>
+
+        <nav class="article-nav" aria-label="文章导航">
+          <a class="button button--outline" href="../index.html">返回博客列表</a>
+          <a class="button button--outline" href="./agent-ui-feedback.html">上一篇：Agent 状态反馈</a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">期待与您交流合作 © 2026 林逸凡</p>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>

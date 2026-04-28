@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>林逸凡 | 博客</title>
+    <meta
+      name="description"
+      content="林逸凡的博客模块，包含 LLM 与 Agent 两个方向的技术文章。"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav nav-scrolled" aria-label="主导航">
+        <div class="nav__inner">
+          <a class="nav__brand" href="../index.html">林逸凡</a>
+          <div class="nav__links" aria-label="桌面端导航">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#projects">项目</a>
+            <a href="./index.html">博客</a>
+            <a href="../index.html#contact">联系</a>
+          </div>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="打开菜单"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+          <button class="mobile-menu__close" type="button" aria-label="关闭菜单">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+          <div class="mobile-menu__links" aria-label="移动端导航">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#projects">项目</a>
+            <a href="./index.html">博客</a>
+            <a href="../index.html#contact">联系</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container">
+        <section class="page-hero">
+          <p class="page-hero__eyebrow">Blog / Notes</p>
+          <h1 class="page-hero__title">关于 LLM 与 Agent 的一些研究与实践记录</h1>
+          <p class="page-hero__description">
+            这个模块用于整理我在大模型交互、Agent 体验设计、工作流编排以及前端可视化方向的学习笔记。所有文章均为静态页面，支持本地直接访问。
+          </p>
+        </section>
+
+        <section class="blog-layout" aria-label="博客列表">
+          <article class="blog-list__item">
+            <div class="blog-list__topline">
+              <span class="blog-category">LLM 相关</span>
+              <span>2026.03.18</span>
+            </div>
+            <h2 class="blog-list__title">从 Prompt 到 Workflow：我如何搭建一个可复用的 LLM 前端实验台</h2>
+            <p class="blog-list__excerpt">
+              从输入面板、上下文拼接、结果可视化到 prompt versioning，这篇文章梳理了我搭建一个“可持续试验”的 LLM 前端工作台时最看重的结构设计。
+            </p>
+            <div class="blog-list__tags">
+              <span class="tag">Prompt Engineering</span>
+              <span class="tag">Workflow</span>
+              <span class="tag">Frontend</span>
+            </div>
+            <a class="blog-card__link" href="./posts/llm-prompt-workflow.html">阅读全文</a>
+          </article>
+
+          <article class="blog-list__item">
+            <div class="blog-list__topline">
+              <span class="blog-category">LLM 相关</span>
+              <span>2026.02.11</span>
+            </div>
+            <h2 class="blog-list__title">让上下文更“轻”：面向前端产品的 LLM 记忆分层策略</h2>
+            <p class="blog-list__excerpt">
+              并不是给模型越多上下文越好。围绕短期对话状态、长期偏好与结构化摘要，我总结了一套更适合产品端落地的轻量记忆策略。
+            </p>
+            <div class="blog-list__tags">
+              <span class="tag">Context Window</span>
+              <span class="tag">Memory</span>
+              <span class="tag">Product Design</span>
+            </div>
+            <a class="blog-card__link" href="./posts/llm-memory-layering.html">阅读全文</a>
+          </article>
+
+          <article class="blog-list__item">
+            <div class="blog-list__topline">
+              <span class="blog-category">Agent 相关</span>
+              <span>2026.03.29</span>
+            </div>
+            <h2 class="blog-list__title">Agent UI 的关键不是炫技，而是让用户理解“下一步会发生什么”</h2>
+            <p class="blog-list__excerpt">
+              如果用户看不懂 Agent 正在做什么，它就只是一个“等待中的黑盒”。这篇文章总结了我对 Agent 状态反馈设计的几个核心判断。
+            </p>
+            <div class="blog-list__tags">
+              <span class="tag">Agent UX</span>
+              <span class="tag">Feedback</span>
+              <span class="tag">Design System</span>
+            </div>
+            <a class="blog-card__link" href="./posts/agent-ui-feedback.html">阅读全文</a>
+          </article>
+
+          <article class="blog-list__item">
+            <div class="blog-list__topline">
+              <span class="blog-category">Agent 相关</span>
+              <span>2026.01.26</span>
+            </div>
+            <h2 class="blog-list__title">把任务拆给多个 Agent 之后，前端界面应该如何呈现进度与边界</h2>
+            <p class="blog-list__excerpt">
+              多 Agent 并行并不只是一种系统能力，它同样会改变用户对界面的预期。我从任务树、日志视图与失败回退三个角度做了整理。
+            </p>
+            <div class="blog-list__tags">
+              <span class="tag">Multi-Agent</span>
+              <span class="tag">Task Tree</span>
+              <span class="tag">Progress UI</span>
+            </div>
+            <a class="blog-card__link" href="./posts/agent-multistep-ux.html">阅读全文</a>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">期待与您交流合作 © 2026 林逸凡</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

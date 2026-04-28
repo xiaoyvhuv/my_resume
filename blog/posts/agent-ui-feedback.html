@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent UI 的关键不是炫技 | 林逸凡</title>
+    <meta
+      name="description"
+      content="Agent UI 的关键不是炫技，而是让用户理解下一步会发生什么。"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav nav-scrolled" aria-label="主导航">
+        <div class="nav__inner">
+          <a class="nav__brand" href="../../index.html">林逸凡</a>
+          <div class="nav__links">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="打开菜单"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+          <button class="mobile-menu__close" type="button" aria-label="关闭菜单">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </button>
+          <div class="mobile-menu__links" aria-label="移动端导航">
+            <a href="../../index.html">首页</a>
+            <a href="../index.html">博客</a>
+            <a href="../../index.html#projects">项目</a>
+            <a href="../../index.html#contact">联系</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container article-layout">
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="blog-category">Agent 相关</span>
+            <span>2026.03.29</span>
+            <span>7 min read</span>
+          </div>
+          <h1 class="article-title">Agent UI 的关键不是炫技，而是让用户理解“下一步会发生什么”</h1>
+          <p class="article-summary">
+            真正决定 Agent 产品体验上限的，往往不是模型能力本身，而是用户能否理解系统当前状态、预期动作与失败边界。
+          </p>
+          <div class="article-tags">
+            <span class="tag">Agent UX</span>
+            <span class="tag">Feedback</span>
+            <span class="tag">Trust</span>
+          </div>
+        </article>
+
+        <section class="article-content">
+          <h2>黑盒感是 Agent 产品最大的阻力</h2>
+          <p>
+            普通对话产品的等待还能被理解成“模型在生成中”，但 Agent 不一样。它可能在搜索文件、拆任务、调用工具、等待返回。如果界面只给一个旋转中的 loading，用户会迅速失去方向感。
+          </p>
+          <p>
+            所以我越来越倾向于把 Agent 的执行过程显式拆开，让界面回答三个问题：现在在做什么、为什么这么做、接下来可能做什么。
+          </p>
+
+          <h2>状态反馈应该从单点变成连续流</h2>
+          <p>
+            我不再把状态设计成“待执行 / 执行中 / 已完成”这样过于粗糙的三段式，而是把 Agent 流程拆成一条连续的状态流。比如：分析需求、定位文件、修改代码、运行校验、整理结果。
+          </p>
+          <p>
+            当用户能看见这条流程线时，即使任务还没结束，也会更愿意等待，因为系统正在表达可理解的进展，而不是单纯地占用时间。
+          </p>
+
+          <h2>要提前暴露边界，而不是事后道歉</h2>
+          <p>
+            很多 Agent 产品只在失败后告诉用户“执行失败”。但真正好的体验应该在开始前就说清边界，例如：会修改哪些文件、是否会运行命令、是否需要联网、哪些结果需要人工确认。
+          </p>
+          <ul>
+            <li>在任务启动前给出行动范围摘要。</li>
+            <li>在关键步骤前展示即将执行的动作。</li>
+            <li>在失败时给出可恢复的下一步，而不是只有报错。</li>
+          </ul>
+          <p>
+            这种设计看似增加了界面复杂度，但换来的是更强的安全感和更高的可控性。
+          </p>
+        </section>
+
+        <nav class="article-nav" aria-label="文章导航">
+          <a class="button button--outline" href="../index.html">返回博客列表</a>
+          <a class="button button--outline" href="./agent-multistep-ux.html">下一篇：多 Agent 进度设计</a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">期待与您交流合作 © 2026 林逸凡</p>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>
